@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import {BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Home from "./Home"
+import NavBar from "./NavBar"
+import React from 'react';
+import {connect} from "react-redux"
+import {fetchCoins} from './redux/actions/coinActions.js'
+import Coins from "./Coins"
+
+class App extends React.Component {
+  componentDidMount(){
+    this.props.fetchCoins()
+     //setInterval(this.props.fetchCoins, 10000)   
+  }
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <NavBar/>
+          <Switch>
+            <Route path="/" exact component={Home}/> 
+            <Route path="/coins" exact component={Coins}/>
+          
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCoins: () => dispatch(fetchCoins())
+  }
+}
+export default  connect(null,mapDispatchToProps)(App);
