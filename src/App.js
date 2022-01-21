@@ -11,11 +11,15 @@ import SignUp from "./SignUp"
 import Login from "./Login"
 import Exchanges from './Exchanges';
 import { fetchExchanges } from './redux/actions/exchangeActions';
+import {loginUser, checkAuth} from './redux/actions/authActions.js'
+import MyAccount from './MyAccount';
+
 
 class App extends React.Component {
   componentDidMount(){
     this.props.fetchCoins()
     this.props.fetchExchanges()
+    this.props.checkAuth()
      setInterval(this.props.fetchCoins, 300000)   
   }
   render() {
@@ -29,6 +33,9 @@ class App extends React.Component {
             <Route path="/sign_up" exact component={SignUp}/>
             <Route path="/login" exact component={Login}/>
             <Route path="/exchanges" exact component={Exchanges}/>
+            <Route path="/my_account" exact component={MyAccount}/>
+
+
           </Switch>
         </Router>
       </div>
@@ -39,7 +46,8 @@ class App extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     fetchCoins: () => dispatch(fetchCoins()),
-    fetchExchanges: () => dispatch(fetchExchanges())
+    fetchExchanges: () => dispatch(fetchExchanges()),
+    checkAuth: () => dispatch(checkAuth())
   }
 }
 export default  connect(null,mapDispatchToProps)(App);

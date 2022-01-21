@@ -3,7 +3,6 @@ import {connect} from "react-redux"
 import Exchange from "./Exchange"
 
 const Exchanges = (props) => {
-    console.log (props.exchanges)
     return (
         <React.Fragment>
            <h1>Exchanges</h1>
