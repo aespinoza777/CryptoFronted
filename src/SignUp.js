@@ -22,7 +22,7 @@ class SignUp extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         this.props.signUpUser(this.state).then(() => {
-            window.location ="/"
+            window.location = "/"
         })
     }
 
@@ -39,9 +39,7 @@ class SignUp extends React.Component {
                    <input type="password" name="password" onChange={this.handleChange}/>
                    <label>Password Confirmation</label>
                    <input type="password" name="password_confirmation" onChange={this.handleChange}/>
-                   <input type="submit" value="Sign Up"/>
-
-                   
+                   <input type="submit" value="Sign Up"/>     
                </form>
             </React.Fragment>
         )

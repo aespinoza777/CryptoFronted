@@ -4,7 +4,6 @@ const getToken = () => {
 }
 
 export const createAccount = (account) => {
-
     return (dispatch) => {
         return fetch("http://localhost:3000/accounts", {
             method: "POST", 

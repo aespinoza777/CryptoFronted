@@ -13,7 +13,7 @@ import Exchanges from './Exchanges';
 import { fetchExchanges } from './redux/actions/exchangeActions';
 import {loginUser, checkAuth} from './redux/actions/authActions.js'
 import MyAccount from './MyAccount';
-
+import ResponsiveAppBar from './Components/Header.js'
 
 class App extends React.Component {
   componentDidMount(){
@@ -26,7 +26,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <NavBar/>
+          <ResponsiveAppBar/>
           <Switch>
             <Route path="/" exact component={Home}/> 
             <Route path="/coins" exact component={Coins}/>
