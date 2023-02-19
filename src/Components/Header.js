@@ -21,7 +21,11 @@ const pages = [ {
    {
        name: "Coins",
        url: "/coins"
-   }
+   },
+   {
+    name: "Exchanges",
+    url: "/exchanges"
+},
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 //<Link to="/">Home Page</Link>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
