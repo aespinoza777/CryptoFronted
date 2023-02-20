@@ -27,7 +27,7 @@ const pages = [ {
     url: "/exchanges"
 },
 ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [{ name: "Login", url: "login" },{ name: "SignUp", url: "sign_up" },{ name: "My Account", url: "my_account" } ];
 //<Link to="/">Home Page</Link>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 //<Link to="/coins">Coins</Link>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
@@ -70,7 +70,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            MENU
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -159,8 +159,8 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+               <MenuItem key={setting.name} component={Link} to={setting.url}>
+               {setting.name}
                 </MenuItem>
               ))}
             </Menu>

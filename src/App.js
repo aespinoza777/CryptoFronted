@@ -1,18 +1,18 @@
 
 import './App.css';
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import Home from "./Home"
+import Home from "./pages/Home"
 import NavBar from "./NavBar"
 import React from 'react';
 import {connect} from "react-redux"
 import {fetchCoins} from './redux/actions/coinActions.js'
-import Coins from "./Coins"
-import SignUp from "./SignUp"
-import Login from "./Login"
-import Exchanges from './Exchanges';
+import Coins from "./pages/Coins/Coins"
+import SignUp from "./pages/SignUp"
+import Login from "./pages/Login"
+import Exchanges from './pages/Exchanges';
 import { fetchExchanges } from './redux/actions/exchangeActions';
 import {loginUser, checkAuth} from './redux/actions/authActions.js'
-import MyAccount from './MyAccount';
+import MyAccount from './pages/MyAccount';
 import ResponsiveAppBar from './Components/Header.js'
 
 class App extends React.Component {

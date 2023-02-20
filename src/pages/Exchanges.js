@@ -1,6 +1,6 @@
 import React from "react"
 import {connect} from "react-redux"
-import Exchange from "./Exchange"
+import Exchange from "../Exchange"
 
 const Exchanges = (props) => {
     return (

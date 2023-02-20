@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react"
-import AccountForm from "./AccountForm"
-import Accounts from "./Accounts"
+import AccountForm from "../AccountForm"
+import Accounts from "../Accounts"
 import {connect} from 'react-redux'
-import {fetchAccounts} from './redux/actions/accountActions'
+import {fetchAccounts} from '../redux/actions/accountActions'
 
 const MyAccount = (props) => {
     useEffect(() =>{
